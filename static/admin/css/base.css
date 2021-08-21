@@ -7,7 +7,7 @@
 /* VARIABLE DEFINITIONS */
 :root {
   --primary: #636363;
-  --secondary: #444444;
+  --secondary: #626262;
   --accent: #e80e0e;
   --primary-fg: #fff;
 
@@ -63,7 +63,7 @@
     --primary-fg: #eee;
 
     --body-fg: #eeeeee;
-    --body-bg: #121212;
+    --body-bg: #333333;
     --body-quiet-color: #e0e0e0;
     --body-loud-color: #ffffff;
 
