@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@charset "UTF-8";
 /**
  * Foundation for Sites
  * Version 6.6.3
@@ -3252,6 +3253,31 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   .card > :last-child {
     margin-bottom: 0; }
 
+.card-divider {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 auto;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+  padding: 1rem;
+  background: #e6e6e6; }
+  .card-divider > :last-child {
+    margin-bottom: 0; }
+
+.card-section {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 auto;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  padding: 1rem; }
+  .card-section > :last-child {
+    margin-bottom: 0; }
+
+.card-image {
+  min-height: 1px; }
 .card-divider {
   display: -webkit-box;
   display: -webkit-flex;

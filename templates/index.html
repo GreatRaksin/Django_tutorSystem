@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <style>
+        .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 15%;
+            min-width: 150px;
+            text-align: center;
+            margin-bottom: 1rem;
+            border: 1px solid #e6e6e6;
+            border-radius: 0;
+            background: #fefefe;
+            box-shadow: none;
+            overflow: hidden;
+            color: #0a0a0a;
+        }
+
+        .card-section {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1 0 auto;
+            -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
+            padding: 1rem;
+        }
+
+        .card-image {
+            min-height: 1px;
+        }
+
+        .button {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 0 1rem 0;
+            padding: 0.85em 1em;
+            border: 1px solid transparent;
+            border-radius: 0;
+            -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+            transition: background-color 0.25s ease-out, color 0.25s ease-out;
+            font-family: inherit;
+            font-size: 0.9rem;
+            -webkit-appearance: none;
+            line-height: 1;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .button, .button.disabled, .button[disabled], .button.disabled:hover, .button[disabled]:hover, .button.disabled:focus, .button[disabled]:focus {
+            background-color: #1779ba;
+            color: #fefefe;
+        }
+
+        .button:hover, .button:focus {
+            background-color: #14679e;
+            color: #fefefe;
+        }
+
+    </style>
+
+    <div class="row">
+        {% for foo in 'hello' %}
+            <div class="card">
+                <img src="{{ foo }}">
+                <div class="card-section">
+                    <h4>{{ foo }}</h4>
+                    <a href="{{ foo }}" class="button">Подробнее</a>
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+{% endblock %}
