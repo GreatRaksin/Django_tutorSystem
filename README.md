@@ -11,4 +11,6 @@
 * Add environment variables <code>SECRET_KEY</code> and variables for DB user (if you want to use MySQL or PostgreSQL databases instead of SQLite)
 * Run <code>python manage.py makemigrations</code>
 * Then run <code>python manage.py migrate</code>
+* Create a superuser <code>python manage.py createsuperuser</code>
+* Run <code>python manage.py runserver</code>
 * Enjoy!
