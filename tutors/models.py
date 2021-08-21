@@ -8,7 +8,7 @@ class Tutor(models.Model):
     img_link = models.URLField('Ссылка на фото', max_length=128, db_index=True, blank=True, null=True)
     anchor = models.CharField('Анкор на сайте', max_length=128, blank=True, null=True)
     city = models.ForeignKey('Cities', verbose_name='Город', null=True, on_delete=models.CASCADE)
-    subject = models.ForeignKey('Subjects', verbose_name='Предмет', null=True, on_delete=models.CASCADE)
+    subject = models.ManyToManyField('Subjects', related_name='Предметы')
     school = models.BooleanField('Работает в школе', db_index=True, blank=True, null=True, default=False)
 
     class Meta:

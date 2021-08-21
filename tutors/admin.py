@@ -1,9 +1,14 @@
 from django.contrib import admin
+from django.db import models
+from django.forms import CheckboxSelectMultiple
 from .models import Tutor, Subjects, Cities
 
 
 class TutorAdmin(admin.ModelAdmin):
-    list_display = ('l_name', 'f_name', 'city', 'subject', 'school')
+    formfield_overrides = {
+        models.ManyToManyField: {'widget': CheckboxSelectMultiple},
+    }
+    list_display = ('l_name', 'f_name', 'city', 'school')
     list_filter = ('city', 'subject', 'school')
 
 
