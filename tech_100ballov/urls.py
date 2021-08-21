@@ -22,3 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('tutors.urls'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+admin.site.site_header = "100 баллов | Админка"
+admin.site.site_title = "100 ballov management system"
+admin.site.index_title = "Welcome to 100 ballov management system"
