@@ -5,14 +5,9 @@ from .models import Tutor
 # Create your views here.
 def index(request):
     form = TutorSelectForm()
+    town = request.GET.get('city')
+    predm = request.GET.get('subject')
+    tutors = Tutor.objects.filter(city=town, subject=predm)
 
-    if form.is_valid():
-        predm = form.cleaned_data.get('subject')
-        city = form.cleaned_data.get('city')
-        tutors = Tutor.objects.all().filter(subject=1, city=1)
-        print(predm, city)
-        return render(request, 'index.html', {'form': form, 'tutors': tutors})
-    else:
-        tutors = []
     return render(request, 'index.html', {'form': form,
                                           'tutors': tutors})
