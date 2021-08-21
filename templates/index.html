@@ -64,13 +64,19 @@
 
     </style>
 
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
+
     <div class="row">
-        {% for foo in 'hello' %}
+        {% for tutor in tutors %}
             <div class="card">
-                <img src="{{ foo }}">
+                <img src="{{ tutor.img_link }}" style="min-width: 100px; width: 50%;">
                 <div class="card-section">
-                    <h4>{{ foo }}</h4>
-                    <a href="{{ foo }}" class="button">Подробнее</a>
+                    <h4>{{ tutor.f_name }} {{ tutor.l_name }}</h4>
+                    <a href="#{{ tutor.anchor }}" class="button">Подробнее</a>
                 </div>
             </div>
 
