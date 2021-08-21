@@ -3,7 +3,7 @@
 
 {% block content %}
     <style>
-        .row {
+        .tut-row {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -11,8 +11,8 @@
         }
 
         .card {
-            width: 15%;
-            min-width: 150px;
+            width: 25%;
+            min-width: 120px;
             text-align: center;
             margin-bottom: 1rem;
             border: 1px solid #e6e6e6;
@@ -21,6 +21,7 @@
             box-shadow: none;
             overflow: hidden;
             color: #0a0a0a;
+            padding-top: 1em;
         }
 
         .card-section {
@@ -31,55 +32,38 @@
             padding: 1rem;
         }
 
-        .card-image {
-            min-height: 1px;
-        }
-
-        .button {
-            display: inline-block;
-            vertical-align: middle;
-            margin: 0 0 1rem 0;
-            padding: 0.85em 1em;
-            border: 1px solid transparent;
-            border-radius: 0;
-            -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
-            transition: background-color 0.25s ease-out, color 0.25s ease-out;
-            font-family: inherit;
-            font-size: 0.9rem;
-            -webkit-appearance: none;
-            line-height: 1;
+        .text img {
             text-align: center;
-            cursor: pointer;
+            margin: 0 auto;
         }
 
-        .button, .button.disabled, .button[disabled], .button.disabled:hover, .button[disabled]:hover, .button.disabled:focus, .button[disabled]:focus {
-            background-color: #1779ba;
-            color: #fefefe;
+        .card-section h4 {
+            font-size: 0.5em;
+            font-weight: bold;
         }
 
-        .button:hover, .button:focus {
-            background-color: #14679e;
-            color: #fefefe;
-        }
 
     </style>
 
-    <form action="." method="get">
-        {% csrf_token %}
+    <form action="" method="get">
         {{ form }}
         <input type="submit" value="Submit">
     </form>
 
-    <div class="row">
-        {% for tutor in tutors %}
-            <div class="card" id="{{ tutor.subject }}">
-                <img src="{{ tutor.img_link }}" style="min-width: 100px; width: 50%;">
-                <div class="card-section">
-                    <h4>{{ tutor.f_name }} {{ tutor.l_name }}</h4>
-                    <a href="#{{ tutor.anchor }}" class="button">Подробнее</a>
+    <div class="container">
+        <div class="tut-row">
+            {% for tutor in tutors %}
+                <div class="card">
+                    <img src="{{ tutor.img_link }}" style="min-width: 100px; max-width: 120px"
+                         class="card-image">
+                    <div class="card-section">
+                        <h4>{{ tutor.f_name }}<br>{{ tutor.l_name }}</h4>
+                        <a href="#{{ tutor.anchor }}">Подробнее</a>
+                    </div>
                 </div>
-            </div>
 
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}
+
